@@ -1,6 +1,6 @@
 # Telepat.io Docker Compose file
 # Author: Andrei Marinescu <andrei@telepat.io>
-# Version 0.0.1
+# Version 0.2.0
 
 kafkazookeeper:
   image: wurstmeister/zookeeper
@@ -23,9 +23,13 @@ elasticsearch:
   ports: 
     - "9200:9200"
 telepatcouchbase:
-  image: telepat/docker-couchbase-telepat:0.0.1
+  image: telepat/docker-couchbase-telepat:0.1.0
   ports:
     - "8091:8091"
     - "8092:8092"
     - "11210:11210"
     - "11211:11211"
+redis:
+  image: redis:latest
+  ports: 
+    - "6379:6379"
