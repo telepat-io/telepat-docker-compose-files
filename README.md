@@ -4,7 +4,7 @@ There are two main ways you can get Telepat running on your infrastructure: usin
 
 ##A. Docker containers
 
-We provide official docker-compose recipes for running Telepat and its dependencies (Couchbase, Elasticsearch, Redis and Apache Kafka). The recipes are separated in two components, shared dependencies and the actual Telepat software. Once you have [docker](https://docs.docker.com/installation/) and [docker-compose](https://docs.docker.com/installation/) installed on your machine, here are the steps to get everything running:
+We provide official docker-compose recipes for running Telepat and its dependencies (Couchbase, Elasticsearch, Redis and Apache Kafka). The recipes are separated in two components, shared dependencies and the actual Telepat software. Once you have [docker](https://docs.docker.com/installation/) and [docker-compose](https://docs.docker.com/compose/install/) installed on your machine, here are the steps to get everything running:
 
     git clone https://github.com/telepat-io/telepat-docker-compose-files
     cd telepat-docker-compose-files/shared
