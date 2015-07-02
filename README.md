@@ -15,13 +15,15 @@ Wait for things to boot up and when the logs stabilize, open a new terminal wind
     cd telepat-docker-compose-files/telepat
     sudo docker-compose up
 
-Right now everything should be up and running. The API instance is available on the same IP as your docker client (if you're running the Docker instance locally, it's localhost. If you're running on a Mac with boot2docker, you can find the IP by running boot2docker ip). The Sync API is running on port 3000 by default and the websockets endpoint runs on port 80 by default.
+Right now everything should be up and running. The API instance is available on the same IP as your docker client (if you're running the Docker instance locally, it's localhost. If you're running on a Mac with boot2docker, you can find the IP by running:
+    boot2docker ip
+The Sync API is running on port 3000 by default and the websockets endpoint runs on port 80 by default.
 
 ##B. From source
 
 The Telepat backend stack is made up of two components. The Sync API (https://github.com/telepat-io/telepat-api) and the background workers (https://github.com/telepat-io/telepat-worker). Each of these repos provide usage instructions on their respective README files, generally it's a matter of setting the correct ENV variables for linking to Couchbase, Elasticsearch, Redis and Kafka and then starting the NodeJS apps.
 
-Initial configuration
+##Initial configuration
 
 Along with the docker-compose recipes, the telepat-docker-compose-files repo also contains a bash script that can help seed initial data to your Telepat instance (stuff like creating an admin user and an initial app). While in the root folder of the cloned repo, run these two commands:
 
