@@ -104,20 +104,6 @@ then
     SCHEMA='{
       "appId": "'$APP_ID'",
       "schema": {
-        "answers": {
-          "namespace": "answers",
-          "type": "answers",
-          "properties": {},
-          "belongsTo": [
-            {
-              "parentModel": "events",
-              "relationType": "hasSome"
-            }
-          ],
-          "read_acl": 6,
-          "write_acl": 6,
-          "meta_read_acl": 6
-        },
         "comments": {
           "namespace": "comments",
           "type": "comments",
@@ -153,33 +139,29 @@ then
           "hasMany": [
             "comments"
           ],
-          "hasSome": [
-            "answers"
-          ],
           "read_acl": 7,
           "write_acl": 7,
           "meta_read_acl": 4,
-          "icon": "fa-image",
-          "hasSome_property": "options"
+          "icon": "fa-image"
         }
       }
     }'
 
-    echo "${cyan}Updating schema{reset}"
+    echo "${cyan}Updating schema${reset}"
     curl -XPOST $ENDPOINT/admin/schema/update \
       -H "Content-Type: application/json" \
       -H "Authorization: Bearer $ADMIN_TOKEN" \
       -d "$SCHEMA"
     echo ""
 
-    echo "${cyan}Creating context{reset}"
+    echo "${cyan}Creating context${reset}"
     CTX_ID=`curl -XPOST $ENDPOINT/admin/context/add \
       -H "Content-Type: application/json" \
       -H "Authorization: Bearer $ADMIN_TOKEN" \
       -d '{  "appId": "'$APP_ID'", "name": "Context 1", "state":0 }' | cut -d'"' -f 2`
     echo ""
 
-    echo "${cyan}Adding object{reset}"
+    echo "${cyan}Adding object${reset}"
     curl -XPOST $ENDPOINT/object/create \
       -H "Content-Type: application/json" \
       -H "Authorization: Bearer $ADMIN_TOKEN" \
