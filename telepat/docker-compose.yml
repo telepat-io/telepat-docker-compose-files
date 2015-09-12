@@ -3,41 +3,49 @@
 # Version 0.2.0
 octopusapi:
   net: host
-  image: telepat/octopusapi:0.1.3
+  image: telepat/octopusapi:0.2.2
+  # image: octopus-api-test
   ports:
     - "3000:3000"
 
 octopuswriter:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t write -i 0
 
 octopusaggregator:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t aggregation -i 0
 
-octopustracker:
-  net: host
-  image: telepat/octopusworker:0.1.3
-  command: node index.js -t track -i 0
+# octopustracker:
+#   net: host
+#   # image: telepat/octopusworker:0.2.2
+#   image: octopus-worker-test
+#   command: node index.js -t track -i 0
 
 octopusfriendupdater:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t update_friends -i 0
 
 octopusgcm:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t android_transport -i 0
 
 octopusapns:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t ios_transport -i 0
 
 octopusws:
   net: host
-  image: telepat/octopusworker:0.1.3
+  image: telepat/octopusworker:0.2.2
+  # image: octopus-worker-test
   command: node index.js -t sockets_transport -i 0
