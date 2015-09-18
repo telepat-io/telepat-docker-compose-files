@@ -1,6 +1,6 @@
 # Telepat.io Docker Compose file
 # Author: Andrei Marinescu <andrei@telepat.io>
-# Version 0.2.0
+# Version 0.2.1
 
 kafkazookeeper:
   image: wurstmeister/zookeeper
@@ -15,20 +15,13 @@ kafka:
     - kafkazookeeper:zk
   environment:
     KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
-    KAFKA_CREATE_TOPICS: "aggregation,write,track,update_friends,android_transport,ios_transport,sockets_transport"
+    KAFKA_CREATE_TOPICS: "aggregation,write,update_friends,android_transport,ios_transport,sockets_transport"
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
 elasticsearch:
   image: elasticsearch:1.5.2
   ports: 
     - "9200:9200"
-telepatcouchbase:
-  image: telepat/docker-couchbase-telepat:0.1.0
-  ports:
-    - "8091:8091"
-    - "8092:8092"
-    - "11210:11210"
-    - "11211:11211"
 redis:
   image: redis:latest
   ports: 
