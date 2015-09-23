@@ -27,9 +27,8 @@ The Telepat backend stack is made up of two components. The Sync API (https://gi
 
 ##Initial configuration
 
-Along with the docker-compose recipes, the telepat-docker-compose-files repo also contains a bash script that can help seed initial data to your Telepat instance (stuff like creating an admin user and an initial app). While in the root folder of the cloned repo, run these two commands:
+You can use the telepat-cli NPM package in order to interact with and configure your Telepat instance. Install telepat-cli like this:
 
-    chmod +x telepat.sh
-    ./telepat.sh
+    npm install -g telepat-cli
 
-You can then follow the on-screen instructions for running the various tasks.
+Check out the [Telepat Getting Started article](http://docs.telepat.io/intro.html) on the documentation portal for more details.
