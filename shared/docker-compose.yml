@@ -19,7 +19,7 @@ kafka:
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
 elasticsearch:
-  image: elasticsearch:1.5.2
+  image: elasticsearch:1.7.2
   ports: 
     - "9200:9200"
 redis:
