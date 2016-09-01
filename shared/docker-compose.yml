@@ -11,7 +11,7 @@ rabbitmq:
    - "25672:25672"
 elasticsearch:
   image: elasticsearch:1.7.2
-  command: elasticsearch -Dscript.groovy.sandbox.enabled=true
+  command: elasticsearch -Des.script.groovy.sandbox.enabled=true -Des.script.groovy.sandbox.package_whitelist=groovy.json -Des.script.groovy.sandbox.class_whitelist=groovy.json.JsonSlurper,groovy.json.*
   ports: 
     - "9200:9200"
 redis:
