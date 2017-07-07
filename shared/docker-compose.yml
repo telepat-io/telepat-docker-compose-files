@@ -10,6 +10,9 @@ rabbitmq:
    - "5672:5672"
    - "25672:25672"
    - "15672:15672"
+ environment: 
+   - RABBITMQ_DEFAULT_USER=telepat
+   - RABBITMQ_DEFAULT_PASS=1234pass 
 elasticsearch:
   image: elasticsearch:1.7.2
   command: elasticsearch -Des.script.groovy.sandbox.enabled=true -Des.script.groovy.sandbox.package_whitelist=groovy.json -Des.script.groovy.sandbox.class_whitelist=groovy.json.JsonSlurper,groovy.json.*
