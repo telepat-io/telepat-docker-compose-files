@@ -3,12 +3,13 @@
 # Version 0.3.0
 
 rabbitmq:
- image: rabbitmq:3.5.5
+ image: rabbitmq:3.5.5-management
  ports:
    - "4369:4369"
    - "5671:5671"
    - "5672:5672"
    - "25672:25672"
+   - "15672:15672"
 elasticsearch:
   image: elasticsearch:1.7.2
   command: elasticsearch -Des.script.groovy.sandbox.enabled=true -Des.script.groovy.sandbox.package_whitelist=groovy.json -Des.script.groovy.sandbox.class_whitelist=groovy.json.JsonSlurper,groovy.json.*
